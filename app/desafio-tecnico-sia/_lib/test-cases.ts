@@ -57,19 +57,19 @@ const successMessages: UIMessage[] = [
       toolPart(
         "requestLocation",
         "tc-s2",
-        { message: "Para começarmos, busque e selecione o endereço exato do terreno:" },
-        { type: "location_request", message: "Para começarmos, busque e selecione o endereço exato do terreno:", status: "awaiting_selection" }
+        { message: "Por favor, busque e selecione o endereço exato do terreno no campo abaixo:" },
+        { type: "location_request", message: "Por favor, busque e selecione o endereço exato do terreno no campo abaixo:", status: "awaiting_selection" }
       ),
       {
         type: "text" as const,
-        text: "Olá! Fico feliz com seu interesse. Busque o endereço do terreno no campo acima para começarmos.",
+        text: "Ótimo! Por favor, busque e selecione o endereço exato do terreno no campo abaixo para continuarmos.",
       },
     ],
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any,
   msg(
     "user",
-    "📍 Localização selecionada: **Campeche, Florianópolis - SC, Brasil**\n- Bairro: Campeche\n- Cidade: Florianópolis\n- Estado: SC",
+    "📍 Localização selecionada: R. Carlos Sales - Campeche, Florianópolis - SC, Brasil\nBairro: Campeche\nCidade: Florianópolis\nEstado: SC",
     "s3"
   ),
   {
@@ -94,7 +94,7 @@ const successMessages: UIMessage[] = [
       ),
       {
         type: "text" as const,
-        text: "**Campeche** aprovado! Excelente região para curta temporada. Qual o **tamanho do terreno** em m²?",
+        text: "Localização aprovada! Agora, qual o tamanho do terreno em m²?",
       },
     ],
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -102,22 +102,22 @@ const successMessages: UIMessage[] = [
   msg("user", "450m²", "s5"),
   msg(
     "assistant",
-    "Boa metragem. Qual o **valor pedido** pelo terreno?",
+    "Qual o valor pedido pelo terreno?",
     "s6"
   ),
   msg("user", "R$ 1.200.000", "s7"),
   msg(
     "assistant",
-    "Valor coerente para a região. O terreno possui **escritura pública**?",
+    "O terreno possui escritura pública?",
     "s8"
   ),
-  msg("user", "Sim, tem escritura pública.", "s9"),
+  msg("user", "sim!", "s9"),
   msg(
     "assistant",
-    "O terreno é **frente mar** ou tem **vista para o mar**?",
+    "Esse terreno é frente mar ou tem vista para o mar?",
     "s10"
   ),
-  msg("user", "Não é frente mar mas tem vista pro mar.", "s11"),
+  msg("user", "sim, tem vista pro mar", "s11"),
   {
     id: "s12",
     role: "assistant",
@@ -145,14 +145,14 @@ const successMessages: UIMessage[] = [
           asking_price: 1200000,
           legal_status: "Escritura pública",
           has_sea_view: true,
-          is_beachfront: false,
+          is_beachfront: true,
           neighborhood_focus: "Rentabilidade de curto prazo / Airbnb",
           next_step: "agendar_reuniao",
         }
       ),
       {
         type: "text" as const,
-        text: "Qualificação concluída! Terreno **aprovado** — 450m² no Campeche com vista mar, perfeito para nosso modelo de curta temporada. Próximo passo: **agendar uma reunião** com nosso time de análise.",
+        text: "Perfeito, todas as informações foram recebidas! Seu terreno no Campeche, com 450m², escritura pública e vista para o mar, está dentro do perfil que buscamos para rentabilidade de curta temporada. Vamos agendar uma reunião para avançarmos?",
       },
     ],
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -186,7 +186,7 @@ const successToolResults: ToolResults = {
 const rejectionMessages: UIMessage[] = [
   msg(
     "user",
-    "Boa tarde! Sou proprietário de um terreno no Rio Tavares em Florianópolis.",
+    "Boa tarde! Sou proprietário de um terreno em Florianópolis",
     "r1"
   ),
   {
@@ -196,19 +196,19 @@ const rejectionMessages: UIMessage[] = [
       toolPart(
         "requestLocation",
         "tc-r2",
-        { message: "Para iniciarmos, busque e confirme o endereço do terreno:" },
-        { type: "location_request", message: "Para iniciarmos, busque e confirme o endereço do terreno:", status: "awaiting_selection" }
+        { message: "Por favor, busque e selecione o endereço exato do terreno no campo abaixo:" },
+        { type: "location_request", message: "Por favor, busque e selecione o endereço exato do terreno no campo abaixo:", status: "awaiting_selection" }
       ),
       {
         type: "text" as const,
-        text: "Olá! Busque o endereço do terreno no campo acima para começarmos.",
+        text: "Ótimo! Para começarmos, por favor, busque e selecione o endereço exato do terreno no campo abaixo.",
       },
     ],
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any,
   msg(
     "user",
-    "📍 Localização selecionada: **Rio Tavares, Florianópolis - SC, Brasil**\n- Bairro: Rio Tavares\n- Cidade: Florianópolis\n- Estado: SC",
+    "📍 Localização selecionada: Rio Tavares, Florianópolis - SC, Brasil\nBairro: Rio Tavares\nCidade: Florianópolis\nEstado: SC",
     "r3"
   ),
   {
@@ -238,11 +238,12 @@ const rejectionMessages: UIMessage[] = [
             },
           ],
           fallback_link: "http://google.com/maps/place/florianopolis",
+          message: "Decline educadamente e informe as regiões onde a Seazone atua. Forneça o link de fallback. NÃO continue a qualificação.",
         }
       ),
       {
         type: "text" as const,
-        text: 'Obrigada pelo interesse! Infelizmente, o **Rio Tavares** não está na nossa área de foco atual. A Seazone opera nos bairros **Centro**, **Itacorubi**, **Campeche** e **Jurerê Internacional**.\n\nVeja nossas regiões de interesse: [Mapa de regiões](http://google.com/maps/place/florianopolis)\n\nSe tiver terrenos nessas áreas no futuro, ficaremos felizes em conversar!',
+        text: 'No momento, o bairro Rio Tavares não faz parte das áreas de interesse da Seazone em Florianópolis. Atuamos principalmente em Centro, Itacorubi, Campeche e Jurerê Internacional.\nVeja as regiões no mapa: http://google.com/maps/place/florianopolis\nSe tiver outro terreno nessas áreas, posso ajudar na qualificação!',
       },
     ],
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -263,6 +264,7 @@ const rejectionToolResults: ToolResults = {
       { bairro: "jurerê internacional", foco: "Luxo e alto padrão" },
     ],
     fallback_link: "http://google.com/maps/place/florianopolis",
+    message: "Decline educadamente e informe as regiões onde a Seazone atua. Forneça o link de fallback. NÃO continue a qualificação.",
   },
 };
 

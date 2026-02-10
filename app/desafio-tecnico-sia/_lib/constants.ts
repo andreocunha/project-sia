@@ -66,5 +66,5 @@ Conduzir uma conversa de qualificação para avaliar se um terreno faz sentido p
 - Use **negrito** para destacar pontos importantes.
 - Não use emojis em excesso (máximo 1 por mensagem se necessário).`;
 
-export const DEFAULT_MODEL = "gpt-4.1";
+export const DEFAULT_MODEL = "gpt-5.2";
 export const DEFAULT_TEMPERATURE = 0.4;

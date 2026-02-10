@@ -142,7 +142,7 @@ function getModel(modelId: string) {
 export async function POST(req: Request) {
   const {
     messages,
-    model: modelId = "gpt-4.1",
+    model: modelId = "gpt-5.2",
     temperature = 0.4,
     topP,
     enableValidateLocationTool = false,

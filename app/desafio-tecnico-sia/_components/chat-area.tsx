@@ -148,33 +148,30 @@ export function ChatArea({
             onSubmit={onSubmit}
             className="flex items-center justify-center gap-2"
           >
-            <div className="flex-1 relative">
-              <textarea
-                value={inputValue}
-                onChange={(e) => onInputChange(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    onSubmit();
-                  }
-                }}
-                placeholder="Digite sua mensagem..."
-                rows={1}
-                className="w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 pr-12 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 max-h-32 overflow-y-auto"
-                style={{ minHeight: "44px" }}
-                onInput={(e) => {
-                  const target = e.target as HTMLTextAreaElement;
-                  target.style.height = "auto";
-                  target.style.height =
-                    Math.min(target.scrollHeight, 128) + "px";
-                }}
-              />
-            </div>
+            <textarea
+              value={inputValue}
+              onChange={(e) => onInputChange(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  onSubmit();
+                }
+              }}
+              placeholder="Digite sua mensagem..."
+              rows={1}
+              className="flex-1 h-11 min-h-[44px] max-h-32 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-[11px] text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 overflow-y-auto"
+              onInput={(e) => {
+                const target = e.target as HTMLTextAreaElement;
+                target.style.height = "auto";
+                target.style.height =
+                  Math.min(target.scrollHeight, 128) + "px";
+              }}
+            />
             {isLoading ? (
               <button
                 type="button"
                 onClick={() => onStop()}
-                className="shrink-0 p-3 rounded-xl bg-red-500 text-white hover:bg-red-600 transition-colors cursor-pointer"
+                className="shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-red-500 text-white hover:bg-red-600 transition-colors cursor-pointer"
                 title="Parar geração"
               >
                 <X className="h-4 w-4" />
@@ -183,7 +180,7 @@ export function ChatArea({
               <button
                 type="submit"
                 disabled={!inputValue.trim()}
-                className="shrink-0 p-3 rounded-xl bg-blue-500 text-white hover:bg-blue-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                className="shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-blue-500 text-white hover:bg-blue-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
                 title="Enviar"
               >
                 <Send className="h-4 w-4" />
@@ -193,7 +190,7 @@ export function ChatArea({
               <button
                 type="button"
                 onClick={() => onRegenerate()}
-                className="shrink-0 p-3 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+                className="shrink-0 flex items-center justify-center w-11 h-11 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 title="Regenerar última resposta"
               >
                 <RotateCcw className="h-4 w-4" />

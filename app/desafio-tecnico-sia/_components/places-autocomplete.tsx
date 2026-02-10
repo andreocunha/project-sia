@@ -114,20 +114,6 @@ export function PlacesAutocomplete({
 
   return (
     <div className="animate-in slide-in-from-bottom-2 fade-in duration-200 border border-blue-200 dark:border-blue-800 rounded-xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
-      {/* Header */}
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-gray-100 dark:border-gray-700 bg-blue-50 dark:bg-blue-950/30">
-        <MapPin className="h-4 w-4 text-blue-500 shrink-0" />
-        <span className="text-xs font-medium text-blue-700 dark:text-blue-300">
-          Buscar endereço
-        </span>
-        <button
-          onClick={onClose}
-          className="ml-auto p-1 rounded hover:bg-blue-100 dark:hover:bg-blue-900 cursor-pointer"
-        >
-          <X className="h-3.5 w-3.5 text-blue-400" />
-        </button>
-      </div>
-
       {/* Search Input */}
       <div className="relative px-3 py-2">
         <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
