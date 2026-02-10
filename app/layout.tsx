@@ -3,8 +3,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "André Oliveira Cunha",
-  description: "Sou engenheiro de computação formado pela UFES, com experiência em desenvolvimento de software e uma paixão por criar soluções inovadoras. Essas são algumas de minhas conquistas.",
+  title: "Desafio Técnico SIA - André Cunha",
+  description: "Desafio do chatbot SIA para terrenos, desenvolvido por André Cunha",
 };
 
 export default function RootLayout({
