@@ -6,6 +6,12 @@ Playground interativo para a **Sia (Seazone IA)**, uma agente conversacional de 
 
 O projeto é uma aplicação **Next.js 16** (App Router) com streaming de LLMs (GPT-4.1, GPT-5.2, Gemini 3 Flash) via **Vercel AI SDK v6**, integração com a **Google Places API** para busca de endereços em tempo real, e um painel completo para visualização de resultados (validação geográfica, qualificação do lead, uso de tokens e estimativa de custo).
 
+<p align="center">
+  <video src="public/demo-sia.mov" width="100%" controls>
+    Seu navegador não suporta o elemento de vídeo.
+  </video>
+</p>
+
 ---
 
 ## 📋 Índice
