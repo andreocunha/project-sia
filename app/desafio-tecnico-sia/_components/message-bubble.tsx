@@ -146,6 +146,13 @@ export function MessageBubble({
                     // ── requestLocation: render inline PlacesAutocomplete ──
                     if (toolName === "requestLocation") {
                       const alreadySubmitted = locationAlreadySubmitted || false;
+                      // Show the autocomplete as soon as the tool is invoked
+                      // (state "call" or "result"), not only after result arrives.
+                      // The tool is instant/static, so there's no reason to wait.
+                      const toolState = p.toolInvocation?.state;
+                      // Show as soon as we know it's requestLocation —
+                      // only hide during "partial-call" when args are still streaming.
+                      const isInvoked = toolState !== "partial-call";
 
                       return (
                         <div
@@ -162,7 +169,7 @@ export function MessageBubble({
                               <Check className="h-3.5 w-3.5" />
                               Endereço selecionado com sucesso
                             </div>
-                          ) : isDone ? (
+                          ) : isInvoked ? (
                             <PlacesAutocomplete
                               onPlaceSelected={(details) => {
                                 onSendLocationMessage?.({
