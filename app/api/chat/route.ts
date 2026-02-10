@@ -212,7 +212,7 @@ export async function POST(req: Request) {
             allowed_neighborhoods: Object.entries(ALLOWED_NEIGHBORHOODS).map(
               ([name, info]) => ({ bairro: name, foco: info.focus })
             ),
-            fallback_link: "https://google.com/maps/exemplo",
+            fallback_link: "http://google.com/maps/place/florianopolis",
           };
         }
 
@@ -240,7 +240,7 @@ export async function POST(req: Request) {
           allowed_neighborhoods: Object.entries(ALLOWED_NEIGHBORHOODS).map(
             ([name, info]) => ({ bairro: name, foco: info.focus })
           ),
-          fallback_link: "https://google.com/maps/exemplo",
+          fallback_link: "http://google.com/maps/place/florianopolis",
           message:
             "Decline educadamente e informe as regiões onde a Seazone atua. Forneça o link de fallback. NÃO continue a qualificação.",
         };

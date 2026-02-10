@@ -237,12 +237,12 @@ const rejectionMessages: UIMessage[] = [
               foco: "Luxo e alto padrão",
             },
           ],
-          fallback_link: "https://google.com/maps/exemplo",
+          fallback_link: "http://google.com/maps/place/florianopolis",
         }
       ),
       {
         type: "text" as const,
-        text: 'Obrigada pelo interesse! Infelizmente, o **Rio Tavares** não está na nossa área de foco atual. A Seazone opera nos bairros **Centro**, **Itacorubi**, **Campeche** e **Jurerê Internacional**.\n\nVeja nossas regiões de interesse: [Mapa de regiões](https://google.com/maps/exemplo)\n\nSe tiver terrenos nessas áreas no futuro, ficaremos felizes em conversar!',
+        text: 'Obrigada pelo interesse! Infelizmente, o **Rio Tavares** não está na nossa área de foco atual. A Seazone opera nos bairros **Centro**, **Itacorubi**, **Campeche** e **Jurerê Internacional**.\n\nVeja nossas regiões de interesse: [Mapa de regiões](http://google.com/maps/place/florianopolis)\n\nSe tiver terrenos nessas áreas no futuro, ficaremos felizes em conversar!',
       },
     ],
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -262,7 +262,7 @@ const rejectionToolResults: ToolResults = {
       { bairro: "campeche", foco: "Rentabilidade de curto prazo / Airbnb" },
       { bairro: "jurerê internacional", foco: "Luxo e alto padrão" },
     ],
-    fallback_link: "https://google.com/maps/exemplo",
+    fallback_link: "http://google.com/maps/place/florianopolis",
   },
 };
 
