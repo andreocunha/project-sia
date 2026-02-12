@@ -1,7 +1,5 @@
 # 🏖️ Sia — Agente de Pré-Qualificação de Terrenos (Seazone IA)
 
-> **Desafio Técnico: Engenheiro de Prompt — Sia (Módulo Terrenos)**
-
 Playground interativo para a **Sia (Seazone IA)**, uma agente conversacional de pré-qualificação de terrenos que atua como _Concierge de Alta Performance_. A Sia conduz conversas naturais com corretores e proprietários, valida geograficamente os bairros de interesse, coleta dados do terreno e gera uma saída estruturada JSON para integração com CRM via N8N.
 
 O projeto é uma aplicação **Next.js 16** (App Router) com streaming de LLMs (GPT-4.1, GPT-5.2, Gemini 3 Flash) via **Vercel AI SDK v6**, integração com a **Google Places API** para busca de endereços em tempo real, e um painel completo para visualização de resultados (validação geográfica, qualificação do lead, uso de tokens e estimativa de custo).
